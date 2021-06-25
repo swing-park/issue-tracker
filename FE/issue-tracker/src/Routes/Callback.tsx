@@ -12,8 +12,9 @@ const Callback = ({ history, location }: RouteComponentProps) => {
 
       try {
         const jwt_token = await fetch(
-          `http://3.37.161.3/user/login/oauth/github?code=${code}`
+          `http://3.37.161.3/api/user/login/oauth/github?code=${code}`
         ).then((res) => res.json());
+
         console.log("토큰이 넘어오냐", jwt_token);
 
         setLoginData({

@@ -22,11 +22,11 @@ const LabelAddModal = () => {
   const setAddNewLabelState = useSetRecoilState(toggleAddNewLabelState);
 
   const handleAddLabelClick = () => {
-    API.post("/label", addLabelData, loginData.userToken).then((res) => {
+    API.post("/api/label", addLabelData, loginData.userToken).then((res) => {
       if (res.ok) setLabelDataList([...labelDataList, addLabelData]);
     });
     setAddNewLabelState(false);
-    API.get("/label", loginData.userToken);
+    API.get("/api/label", loginData.userToken);
   };
 
   const onLabelInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {

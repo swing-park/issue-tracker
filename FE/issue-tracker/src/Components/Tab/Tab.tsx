@@ -24,10 +24,11 @@ const Tab = () => {
   );
   const tabState = useRecoilValue(currentTabState);
 
-  const { fetchedData: labelData, loading: labelLoading } = useFetch("/label");
+  const { fetchedData: labelData, loading: labelLoading } =
+    useFetch("/api/label");
 
   const { fetchedData: milestoneData, loading: milestoneLoading } =
-    useFetch("/milestone");
+    useFetch("/api/milestone");
 
   const setLabelDataList = useSetRecoilState(labelDataListState);
 

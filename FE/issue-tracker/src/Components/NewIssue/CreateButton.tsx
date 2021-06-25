@@ -13,8 +13,8 @@ const CreateButton = () => {
   const handleOnClick = (e: any) => {
     if (e.target.childNodes[0].disabled) e.preventDefault();
 
-    API.withAuth("/issue", newIssue, logInData.userToken);
-    API.get("/issue", logInData.userToken);
+    API.withAuth("/api/issue", newIssue, logInData.userToken);
+    API.get("/api/issue", logInData.userToken);
   };
 
   return (

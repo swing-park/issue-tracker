@@ -17,24 +17,24 @@ const DeleteButton = ({ id, type }: deleteButtonPropType) => {
   const loginData = useRecoilValue(userLoggedIn);
   const handleDeleteClick = () => {
     type === "label"
-      ? API.delete(`/label/${id}`, loginData.userToken).then((res) => {
+      ? API.delete(`/api/label/${id}`, loginData.userToken).then((res) => {
           if (res.ok) {
             const modified = labelDataList.filter((label) => label.id !== id);
             setLabelDataList(modified);
-            API.get(`/label`, loginData.userToken);
+            API.get(`/api/label`, loginData.userToken);
           }
         })
-      : API.delete(`/milestone/${id}`, loginData.userToken).then((res) => {
+      : API.delete(`/api/milestone/${id}`, loginData.userToken).then((res) => {
           if (res.ok) {
             const modified = milestoneDataList.filter(
               (mimlestone) => mimlestone.id !== id
             );
             setMilestoneDataList(modified);
-            API.get(`/milestone`, loginData.userToken);
+            API.get(`/api/milestone`, loginData.userToken);
           }
         });
-    API.get(`/label`, loginData.userToken);
-    API.get(`/milestone`, loginData.userToken);
+    API.get(`/api/label`, loginData.userToken);
+    API.get(`/api/milestone`, loginData.userToken);
   };
 
   return (

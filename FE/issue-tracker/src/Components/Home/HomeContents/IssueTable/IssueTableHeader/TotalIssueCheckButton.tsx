@@ -5,7 +5,7 @@ const TotalIssueCheckButton = () => {
   const [checkedItemList, setCheckedItemList] =
     useRecoilState(checkedItemState);
   const Issues = useRecoilValue(IssueList);
-
+  console.log(checkedItemList);
   const handletotalCheck = () => {
     if (Issues.length === checkedItemList.size) {
       checkedItemList.clear();

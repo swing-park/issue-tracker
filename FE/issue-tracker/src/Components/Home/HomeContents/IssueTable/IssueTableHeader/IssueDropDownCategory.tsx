@@ -73,9 +73,9 @@ const CategoryDropdownContainer = () => {
     });
   };
 
-  const { fetchedData: userData } = useFetch("/user");
-  const { fetchedData: labelData } = useFetch("/label");
-  const { fetchedData: milestoneData } = useFetch("/milestone");
+  const { fetchedData: userData } = useFetch("/api/user");
+  const { fetchedData: labelData } = useFetch("/api/label");
+  const { fetchedData: milestoneData } = useFetch("/api/milestone");
 
   useEffect(() => {
     handlefetchedData();

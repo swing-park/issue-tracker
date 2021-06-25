@@ -19,14 +19,14 @@ const MilestoneAddModal = () => {
   );
 
   const handleEditCloseBtnClick = () => {
-    API.post("/milestone", addMilestoneData, loginData.userToken).then(
+    API.post("/api/milestone", addMilestoneData, loginData.userToken).then(
       (res) => {
         if (res.ok) setMilestoneData([...milestoneData, addMilestoneData]);
       }
     );
 
     setMilestoneAddState(false);
-    API.get("/label", loginData.userToken);
+    API.get("/api/label", loginData.userToken);
   };
 
   const onChangeMilestoneInput = (e: React.ChangeEvent<HTMLInputElement>) => {

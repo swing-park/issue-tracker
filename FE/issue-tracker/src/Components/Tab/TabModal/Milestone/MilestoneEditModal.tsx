@@ -30,16 +30,18 @@ const MilestoneEditModal = ({ id }: MilesEditProps) => {
   };
 
   const handleEditCloseBtnClick = () => {
-    API.put(`/milestone/${id}`, editMilestoneData, loginData.userToken).then(
-      (res) => {
-        if (res.ok) {
-          const modifiedArray = milestoneData.map((mile) =>
-            mile.id === id ? editMilestoneData : mile
-          );
-          setMilestoneData(modifiedArray);
-        }
+    API.put(
+      `/api/milestone/${id}`,
+      editMilestoneData,
+      loginData.userToken
+    ).then((res) => {
+      if (res.ok) {
+        const modifiedArray = milestoneData.map((mile) =>
+          mile.id === id ? editMilestoneData : mile
+        );
+        setMilestoneData(modifiedArray);
       }
-    );
+    });
 
     setMilestoneEditState({
       isOpen: false,

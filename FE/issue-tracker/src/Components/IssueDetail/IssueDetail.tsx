@@ -18,7 +18,9 @@ const IssueDetail = ({ match }: RouteComponentProps<MatchParams>) => {
 
   const setIssueDetailDatas = useSetRecoilState(issueDetailState);
 
-  const { fetchedData: issueDetailData, loading } = useFetch(`/issue/${id}`);
+  const { fetchedData: issueDetailData, loading } = useFetch(
+    `/api/issue/${id}`
+  );
 
   useEffect(() => {
     setIssueDetailDatas(issueDetailData as IssueDetailType);

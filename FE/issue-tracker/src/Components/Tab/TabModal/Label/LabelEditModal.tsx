@@ -51,15 +51,17 @@ const LabelEditModal = ({ id }: LabelEditProps) => {
   };
 
   const handleEditCloseBtnClick = () => {
-    API.put(`/label/${id}`, editLabelData, loginData.userToken).then((res) => {
-      if (res.ok) {
-        console.log(res);
-        const modifiedArray = labelDataList.map((label) =>
-          label.id === id ? editLabelData : label
-        );
-        setLabelDataList(modifiedArray);
+    API.put(`/api/label/${id}`, editLabelData, loginData.userToken).then(
+      (res) => {
+        if (res.ok) {
+          console.log(res);
+          const modifiedArray = labelDataList.map((label) =>
+            label.id === id ? editLabelData : label
+          );
+          setLabelDataList(modifiedArray);
+        }
       }
-    });
+    );
 
     setLabelEditState({
       isOpen: false,

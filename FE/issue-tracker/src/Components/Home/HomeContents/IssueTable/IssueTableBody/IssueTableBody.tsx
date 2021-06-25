@@ -17,8 +17,8 @@ const IssueTableBody = () => {
   const pipeFnsArray = useRecoilValue(pipeFunctionState);
   const resetPipe = useResetRecoilState(pipeFunctionState);
 
-  const { fetchedData: openedIssue, loading } = useFetch("/issue?is=open");
-  const { fetchedData: closedIssue } = useFetch("/issue?is=closed");
+  const { fetchedData: openedIssue, loading } = useFetch("/api/issue?is=open");
+  const { fetchedData: closedIssue } = useFetch("/api/issue?is=closed");
 
   const IssueDatas = pipeFnsArray
     ? Object.values(pipeFnsArray).reduce(
