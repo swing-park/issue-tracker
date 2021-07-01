@@ -19,7 +19,7 @@ const TotalIssueCheckButton = () => {
   return (
     Issues && (
       <input
-        checked={checkedItemList.size === Issues.length}
+        checked={checkedItemList.size === Issues.length && Issues.length !== 0}
         type="checkbox"
         onChange={handletotalCheck}
       />

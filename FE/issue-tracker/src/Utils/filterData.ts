@@ -15,7 +15,7 @@ export const getLabelFilteredData =
 
 export const getMilestoneFilteredData =
   (clickedMilestone: string) => (issues: IssueType[]) =>
-    issues.filter((issue) => issue.milestone.title === clickedMilestone);
+    issues.filter((issue) => issue.milestone?.title === clickedMilestone);
 
 export const getAuthorFilteredData =
   (clickedAuthor: string) => (issues: IssueType[]) =>
